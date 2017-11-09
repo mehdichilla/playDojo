@@ -1,0 +1,43 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       controllers.Application.index()
+
+POST    /api/movie                              controllers.MovieCtrl.saveMovie()
+POST    /api/movie/remove/:id                   controllers.MovieCtrl.deleteMovie(id: Integer)
+GET     /api/movies                             controllers.MovieCtrl.getAllMovies()
+GET     /api/movie/:name                        controllers.MovieCtrl.getMovieByName(name: String)
+GET     /api/movie/genre/:name                  controllers.MovieCtrl.getByGenre(name: String)
+GET     /api/movie/realisator/:name             controllers.MovieCtrl.getByRealisator(name: String)
+GET     /api/movie/categorie/:name              controllers.MovieCtrl.getByCategorie(name: String)
+
+POST    /api/boardGame                          controllers.BoardGameCtrl.saveBoardGame()
+POST    /api/boardGame/remove/:id               controllers.BoardGameCtrl.deleteBoardGame(id:Integer)
+GET     /api/boardGames                         controllers.BoardGameCtrl.getAllBoardGame()
+GET     /api/boardGame/:name                    controllers.BoardGameCtrl.getBoardGameByName(name:String)
+GET     /api/boardGame/genre/:name              controllers.BoardGameCtrl.getByGenre(name:String)
+GET     /api/boardGame/categorie/:name          controllers.BoardGameCtrl.getByCategorie(name:String)
+GET     /api/boardGame/maxPlayer/:id            controllers.BoardGameCtrl.getByMaxPlayer(id:Integer)
+
+POST    /api/book                               controllers.BookCtrl.saveBook()
+POST    /api/book/remove/:id                    controllers.BookCtrl.deleteBook(id:Integer)
+GET     /api/books                              controllers.BookCtrl.getAllBooks()
+GET     /api/book/:name                         controllers.BookCtrl.getBookByName(name:String)
+GET     /api/book/genre/:genre                  controllers.BookCtrl.getByGenre(genre:String)
+GET     /api/book/categorie/:categorie          controllers.BookCtrl.getByCategorie(categorie:String)
+GET     /api/book/language/:language            controllers.BookCtrl.getByLanguage(language:String)
+
+POST    /api/music                               controllers.MusicCtrl.saveMusic()
+POST    /api/music/remove/:id                    controllers.MusicCtrl.deleteMusic(id:Integer)
+GET     /api/musics                              controllers.MusicCtrl.getAllMusic()
+GET     /api/music/album/:name                   controllers.MusicCtrl.getMusicByNameAlbum(name:String)
+GET     /api/music/singer/:name                  controllers.MusicCtrl.getMusicBySinger(name:String)
+GET     /api/music/genre/:genre                  controllers.MusicCtrl.getByGenre(genre:String)
+GET     /api/music/categorie/:categorie          controllers.MusicCtrl.getByCategorie(categorie:String)
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
